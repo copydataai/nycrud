@@ -3,34 +3,35 @@
 # Django
 from django.urls import path
 
-#View
+# View
 from users import views
 
 urlpatterns = [
     
     path(
         route='login/',
-        view=views.LoginView.as_view(),
+        view=views.LoginView,
         name='login'
     ),
     path(
         route='logout/',
-        view=views.LogoutView.as_view(),
+        view=views.LogoutView,
         name='logout'
     ),
     path(
         route='signup/',
-        view=views.SignupView.as_view(),
+        view=views.SignupView,
         name='signup'
     ),
     path(
         route='me/profile/',
-        view=views.UpdateProfileView.as_view(),
+        view=views.UpdateProfileView,
         name='update'
     ),
+    # Posts
     path(
         route='<str:username>',
-        view=views.UserDetailView.as_view(),
+        view=views.UserDetailView,
         name='detail'
     ),
 ]
